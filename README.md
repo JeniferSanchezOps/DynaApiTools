@@ -39,6 +39,21 @@ Obtener datos de OneAgents para un host group:
 python run_get_oneagents.py --hostgroup HOST_GROUP-... --from "05.09.2025 00:00" --to "05.09.2025 10:00" --output /ruta/salida.xlsx --token "$DT_API_TOKEN"
 ```
 
+## Notebook demo
+
+Hay un notebook de ejemplo diseñado para ejecutar el mismo flujo tipo Jupyter con URL de ejemplo y token fijo `abc`.
+
+- Archivo: `DisabledOA_demo.ipynb`
+- Usa una hoja de Excel con columna `entityId`
+- La URL fija es `https://ejemplo.live.dynatrace.com`
+- El token fijo es `abc`
+
+Para usarlo:
+
+1. Abre `DisabledOA_demo.ipynb` en Jupyter.
+2. Asegúrate de tener un archivo Excel válido, por ejemplo `demo_hostids.xlsx`.
+3. Corre la celda Python que lee el Excel y hace el POST por cada `HostID`.
+
 ## Ejecución paso a paso
 
 1. Instala las dependencias:
