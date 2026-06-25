@@ -1,0 +1,45 @@
+# Dynatrace API Toolkit
+
+Toolkit de ejemplo para interactuar con Dynatrace API usando Python.
+
+## Estructura
+
+- `dynatrace_api_toolkit/`: paquete Python
+- `dynatrace_api_toolkit/config.py`: configuración base y variables de entorno
+- `dynatrace_api_toolkit/client.py`: funciones de API
+- `dynatrace_api_toolkit/utils.py`: utilidades de tiempo y lectura de Excel
+- `requirements.txt`: dependencias
+
+## Configuración
+
+Define los valores en variables de entorno o pásalos a los scripts:
+
+```bash
+export DT_API_TOKEN="tu_token"
+export DT_BASE_URL="https://ejemplo.live.dynatrace.com"
+```
+
+## Instalación
+
+```bash
+python -m pip install -r requirements.txt
+```
+
+## Uso
+
+Deshabilitar la monitorización de un host group desde un Excel:
+
+```bash
+python run_disable_oa.py --excel /ruta/archivo.xlsx --token "$DT_API_TOKEN"
+```
+
+Obtener datos de OneAgents para un host group:
+
+```bash
+python run_get_oneagents.py --hostgroup HOST_GROUP-... --from "05.09.2025 00:00" --to "05.09.2025 10:00" --output /ruta/salida.xlsx --token "$DT_API_TOKEN"
+```
+
+## Notas
+
+- El dominio Dynatrace se fija en `https://ejemplo.live.dynatrace.com`
+- No dejes tokens en texto plano en los archivos de código
